@@ -2417,3 +2417,41 @@ textarea:-ms-input-placeholder {
         left: -200px;
     }
 }
+
+/* ABOUT SECTION IMAGE FIX */
+.about-img {
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-img1 {
+    position: relative;
+    width: 100%;
+}
+
+.about-img2 {
+    position: absolute;
+    width: 55%;
+    bottom: -40px;
+    right: -20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .about-img2 {
+        position: relative;
+        width: 70%;
+        bottom: 0;
+        right: 0;
+        margin: 20px auto 0;
+    }
+}
