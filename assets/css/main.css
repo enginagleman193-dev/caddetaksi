@@ -152,11 +152,12 @@
 }
 
 .about-img .about-img2 {
-    max-width: 280px;
+    max-width: 420px;   /* 280 -> 420 */
     position: absolute;
     right: 60px;
     bottom: 0;
 }
+
 
 .round-text {
     position: absolute;
