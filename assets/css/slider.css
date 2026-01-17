@@ -1,0 +1,479 @@
+/* ===================================================
+    Table of Contents
+=====================================================
+    1.0 Wrapper
+	2.0 Slider Content
+	3.0 Car Holder
+	4.0 Slider Pagination
+	5.0 Slider Navigation
+=====================================================
+    Slider CSS
+==================================================== */
+
+/*=== 1.0 Wrapper ===*/
+.main-slider {
+    position: relative;
+}
+
+.main-slider .swiper-slide {
+    z-index: 1;
+}
+
+.slider-img {
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.slider-img img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation-duration: 8s;
+}
+
+/*=== 2.0 Slider Content ===*/
+.slider-content-wrap {
+    height: 520px;
+}
+
+.slider-caption.medium {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.slider-caption.big {
+    font-size: 56px;
+    line-height: 60px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.slider-caption.small {
+    font-size: 18px;
+    line-height: 28px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/*=== 3.0 Car Holder ===*/
+.car-holder {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.car-holder img {
+    z-index: 2;
+    width: 62vw;
+    max-width: 920px;
+    height: auto;
+    /* Keep original direction (no flip) */
+    transform: none;
+}
+
+/* Hero taxi banner image */
+.car-holder img.hero-taksi-banner {
+    width: 62vw;
+    max-width: 960px;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Premium WhatsApp CTA (clickable) */
+.hero-wa-cta {
+    position: absolute;
+    left: 70px;
+    bottom: 90px;
+    z-index: 8;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 22px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(37,211,102,1) 0%, rgba(28,186,87,1) 100%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 0 16px 34px rgba(0,0,0,0.28);
+    border: 2px solid rgba(255,255,255,0.22);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transform: translateZ(0);
+}
+
+.hero-wa-cta i.lab.la-whatsapp {
+    font-size: 28px;
+}
+
+.hero-wa-cta .wa-text {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+.hero-wa-cta .wa-phone {
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+.hero-wa-cta:hover {
+    filter: brightness(1.04);
+    transform: translateY(-1px);
+}
+
+.car-holder .shape {
+    position: absolute;
+    right: 120px;
+    top: 0;
+    height: 100%;
+    width: 450px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    transform: skew(-20deg, 0deg);
+    overflow: hidden;
+}
+
+.car-holder .shape div {
+    background-color: #222;
+    width: 100px;
+    height: 80%;
+    z-index: 1;
+}
+
+.car-holder .shape div:nth-child(2) {
+    background-color: #ff9900;
+    width: 200px;
+    height: 100%;
+}
+
+.car-holder .shape div:nth-child(3) {
+    background-color: #222;
+    width: 100px;
+    height: 80%;
+    margin-bottom: 30%;
+}
+
+/*=== 4.0 Slider Pagination ===*/
+.slider-controls {
+    background-color: #fff;
+    border-radius: 2px;
+    width: 300px;
+    height: 80px;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5px;
+    z-index: 10;
+}
+
+.slider-controls .slider-pagination {
+    width: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.slider-control {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.165, .85, .45, 1);
+}
+
+.slider-control:hover {
+    color: #ff9900;
+}
+
+.slider-control span {
+    font-size: 30px;
+    margin-top: 3px;
+    line-height: 1;
+}
+
+.slider-pagination .swiper-pagination-current {
+    font-size: 42px;
+    font-weight: 500;
+    color: #ff9900;
+}
+
+@media (min-width: 1200px) {
+    .slider-controls{
+        width: 450px;
+        justify-content: flex-end;
+        column-gap: 60px;
+    }
+}
+
+/*=== 5.0 Slider Navigation ===*/
+.main-slider-2 {
+    position: relative;
+}
+
+.main-slider-2 .swiper-nav {
+    color: #222;
+    font-size: 35px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: -5px;
+    top: calc(50% - 30px);
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 300ms cubic-bezier(.165, .85, .45, 1);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.main-slider-2 .swiper-nav:hover {
+    opacity: 1;
+}
+
+.main-slider-2 .swiper-nav:before {
+    background-color: #ff9900;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.main-slider-2 .swiper-nav.swiper-next {
+    justify-content: center;
+    left: auto;
+    right: -5px;
+    clip-path: polygon(0 50%, 100% 100%, 100% 0);
+}
+
+.main-slider-2 .swiper-nav.swiper-prev {
+    justify-content: center;
+    clip-path: polygon(100% 50%, 0 100%, 0 0);
+}
+
+.main-slider-2:hover .swiper-nav{
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+}
+
+.main-slider-2:hover .swiper-nav.swiper-next{
+    left: auto;
+    right: 0;
+}
+
+/* Car Animation */
+.car-animation {
+    -webkit-animation-name: car-animation;
+    animation-name: car-animation;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes car-animation {
+    0% {
+        -webkit-transform: translateX(60%);
+        transform: translateX(60%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes car-animation {
+    0% {
+        -webkit-transform: translateX(60%);
+        transform: translateX(60%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+
+    .slider-caption.big {
+        font-size: 48px;
+        line-height: 52px;
+    }
+
+    .slider-controls {
+        bottom: -1px;
+    }
+
+    .car-holder {
+        display: flex;
+        right: -40px;
+        opacity: 0.95;
+    }
+    .car-holder .shape {
+        right: 40px;
+        width: 260px;
+    }
+    .car-holder img {
+        width: 72vw;
+        max-width: 520px;
+    }
+
+    .car-holder img.hero-taksi-banner {
+        width: 46vw;
+        max-width: 440px;
+        min-width: 240px;
+    }
+}
+
+@media (max-width: 767px) {
+    .slider-caption.big {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .slider-controls {
+        height: 60px;
+    }
+
+    .slider-pagination .swiper-pagination-current {
+        font-size: 32px;
+    }
+
+    .car-holder {
+        right: -60px;
+    }
+    .car-holder .shape {
+        display: none;
+    }
+    .car-holder img {
+        width: 92vw;
+        max-width: 520px;
+    }
+
+    .car-holder img.hero-taksi-banner {
+        width: 86vw;
+        max-width: 460px;
+        min-width: 220px;
+    }
+}
+
+/*=== Cadde Taksi Mobile Adjustments (no drop) ===*/
+@media (max-width: 768px) {
+    /* Keep car-holder overlaid (do NOT stack below). */
+    .main-slider .swiper-slide {
+        position: relative;
+    }
+
+    /* Text: move upward on mobile */
+    .slider-content-wrap {
+        height: 100%;
+        padding: 70px 0 20px;
+        position: relative;
+        z-index: 5;
+    }
+
+    /* Car-holder stays absolute and aligned to the right */
+    .car-holder {
+        position: absolute;
+        right: -60px;
+        bottom: 0;
+        height: 100%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 4;
+        margin-top: 0;
+    }
+
+    .car-holder img.hero-taksi-banner {
+        width: 72vw;
+        max-width: 420px;
+        min-width: 220px;
+        height: auto;
+    }
+
+    /* WhatsApp callout: keep above TAXI on mobile */
+
+    /* Readability: black outline / frame */
+    .slider-caption.big,
+    .slider-caption.medium,
+    .slider-caption.small {
+        text-shadow:
+            -1px -1px 0 rgba(0,0,0,0.55),
+             1px -1px 0 rgba(0,0,0,0.55),
+            -1px  1px 0 rgba(0,0,0,0.55),
+             1px  1px 0 rgba(0,0,0,0.55),
+             0px  2px 10px rgba(0,0,0,0.45);
+    }
+
+    .slider-caption.big {
+        -webkit-text-stroke: 0.6px rgba(0,0,0,0.65);
+    }
+    /* Taxi banner scale on mobile */
+    .car-holder img.hero-taksi-banner {
+        width: 92vw;
+        max-width: 560px;
+    }
+
+    /* WhatsApp CTA stays visible and clickable on mobile */
+    .hero-wa-cta {
+        left: 16px;
+        bottom: 26px;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+    .hero-wa-cta i.lab.la-whatsapp {
+        font-size: 24px;
+    }
+    .hero-wa-cta .wa-text,
+    .hero-wa-cta .wa-phone {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .slider-caption.big {
+        font-size: 34px;
+        line-height: 38px;
+    }
+    .slider-caption.small {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
