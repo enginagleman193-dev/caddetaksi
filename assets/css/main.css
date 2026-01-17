@@ -2419,40 +2419,62 @@ textarea:-ms-input-placeholder {
     }
 }
 
-/* ABOUT SECTION IMAGE FIX */
-.about-img {
+/* ==========================
+   ABOUT IMAGES - FINAL FIX
+   Desktop: about2 overlaps about1 bottom-right quarter
+   Mobile: stack images
+   ========================== */
+
+/* Keep theme's orange skew background and spacing */
+.about-img{
     position: relative;
-    max-width: 520px;
-    margin: 0 auto;
 }
 
-.about-img img {
+/* Make sure base image behaves consistently */
+.about-img .about-img1{
+    display:block;
     width: 100%;
-    height: auto;
-    display: block;
+    max-width: 420px;          /* theme default */
+    transform: translate(10px, 40px);
 }
 
-.about-img1 {
-    position: relative;
-    width: 100%;
-}
-
-.about-img2 {
+/* Overlay image (same width as base), positioned to cover bottom-right quarter */
+.about-img .about-img2{
     position: absolute;
-    width: 70%;
-    bottom: -40px;
-    right: -20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border-radius: 8px;
+    display:block;
+    width: 100%;
+    max-width: 420px;          /* same as about-img1 */
+    right: -10px;              /* fine-tune horizontal overlap */
+    bottom: 10px;              /* lift a bit so it covers bottom-right quarter */
+    transform: none;
+    z-index: 2;
+    border-radius: 3px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.22);
 }
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
-    .about-img2 {
-        position: relative;
-        width: 70%;
-        bottom: 0;
+/* MOBILE: stack (alt alta), no overlap */
+@media (max-width: 767px){
+    .about-img{
+        margin-top: 0;         /* avoid weird negative spacing on mobile */
+    }
+    .about-img:before{
         right: 0;
-        margin: 20px auto 0;
+        width: 140px;
+        bottom: -30px;
+        height: calc(100% + 30px);
+    }
+
+    .about-img .about-img1{
+        max-width: 100%;
+        transform: none;
+        margin: 0 0 14px 0;
+    }
+
+    .about-img .about-img2{
+        position: relative;
+        max-width: 100%;
+        right: auto;
+        bottom: auto;
+        margin: 0;
     }
 }
